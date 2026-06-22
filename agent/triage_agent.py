@@ -142,8 +142,7 @@ Respond in a warm, conversational tone. Use plain language. Avoid jargon."""
 
 def build_agent() -> AgentExecutor:
     llm = ChatAnthropic(
-        model="claude-sonnet-4-20250514",
-        temperature=0.3,
+        model="claude-sonnet-4-6",
         max_tokens=1024,
     )
     tools = [search_resources, get_crisis_resources, classify_needs]
