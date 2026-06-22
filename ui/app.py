@@ -132,10 +132,9 @@ if user_input and user_input.strip():
                 agent_response = result.get("output", "I wasn't able to find results. Please try calling 211.")
                 response_parts.append(agent_response)
             except Exception as e:
-                response_parts.append(
-                    "I'm having trouble searching right now. "
-                    "Please try **calling 211** — they can connect you with local resources for almost any need."
-                )
+                import traceback; traceback.print_exc()
+                response_parts.append(f"⚠️ DEBUG — {type(e).__name__}: {e}")
+                
 
             final_response = "\n\n".join(response_parts)
             st.markdown(final_response)
